@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int idade, acmIdade = 0, contId = 0;
+        double alt, media = 0;
+
+        do{
+            printf("Digite a idade: \n");
+            scanf("%d", &idade);
+            //le a altura e faz os processamentos somente se for uma idade válida
+            if(idade > 0){
+                printf("Digite a altura: \n");
+                scanf("%f", &alt);
+
+                if(alt < 1.21 || alt > 1.69){
+                    acmIdade += idade; //acumula as idades
+                    contId++; //conta quantas pessoas são baixinhas ou altonas
+                }
+            }
+
+        }while(idade > 0); //enquanto idade for positiva - repete as entradas
+
+        if(contId > 0){ //para não dividir por zero!
+            media = acmIdade / contId;
+        }else{
+            media = 0;
+        }
+        printf("A media de idades eh: %.1f\n", media);
+    return 0;
+}
