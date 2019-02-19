@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    double salCarlos, salJoao;
+    int meses = 0;
+
+    printf("Digite o salario do Carlos:\n");
+    scanf("%f", &salCarlos);
+
+    //o salário do Josao é 1/3 do salário do Carlos
+    salJoao = salCarlos / 3;
+
+    while(salCarlos > salJoao) {
+        salCarlos += salCarlos*0.02; //rendimento do carlos
+        salJoao += salJoao*0.05; //rendimento do joão
+        meses++;
+    }
+
+    printf("Levara %i meses para Joao ter mais dinheiro que Carlos!\n", meses);
+    return 0;
+}
