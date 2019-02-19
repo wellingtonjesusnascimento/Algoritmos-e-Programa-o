@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a = 1;
+    int RA = 21187956;
+    int b = 2;
+    int idade = 21;
+    char sexo;
+    int c = 3;
+    int d = 4;
+    float notaum = 8.0;
+    float notadois = 7.5;
+    float notatres = 4.5;
+    int notaquatro = 9;
+    int e = 5;
+    int ladodoquadradrometro = 350;
+    int f = 6;
+    float raiocm = 5;
+    float pi = 3.14159;
+    int g = 7;
+
+    printf("%i. Imprimir meu nome completo, meu RA e o meu curso.\n\n", a);
+    printf("My name is: Wellington Jesus do Nascimento\n\n");
+    printf("My RA is: %i\n\n", RA);
+    printf("My course: Science Computer\n\n");
+
+    printf("%i. Algoritmo para imprimir a minha idade, a minha massa corporal e o meu sexo, sendo f ou m.\n\n", b);
+    printf("A minha idade: %d\n\n", idade);
+    printf("O meu sexo: %c\n\n", 'm');
+
+    printf("%i. Algoritmo para representar resultados logicos de expressoes algebricas\n\n", c);
+
+    int resultado01 = ((120-30) == (3*30));
+    int resultado02 = (!((20%4) == 1) || (9 != 9));
+    int resultado03 = ((5%2/2) > 3);
+    char resultado04 = ('a' == 'A');
+
+    printf("Resultado: %d\n\n", resultado01);
+    printf("Resultado: %d\n\n", resultado02);
+    printf("Resultado: %d\n\n", resultado03);
+    printf("Resultado: %d\n\n", resultado04);
+
+    float calculomedia  = (notaum+notadois+notatres+notaquatro)/4;
+
+    printf("%i. Calculo da media aritmetica das notas: %f\n\n", d, calculomedia);
+
+    int calculoladometro = ladodoquadradrometro*ladodoquadradrometro;
+
+    printf("%i. Construir um algoritmo para apresentar o calculo da area de um quadradro de 350m de lado: %d\n\n", e, calculoladometro);
+
+    float calculoraio = pi*(raiocm*raiocm);
+
+    printf("%i. Area do circulo: %f\n\n", f, calculoladometro);
+
+    float calculoexpressao = (20-15)/2;
+    float calculoexpressao2 = 2*(5/20)+30/(15*2);
+    float calculoexpressao3 = 35/(6+2);
+    float calculoexpressao4 = 3%4;
+
+    printf("%i. Algoritmo que calcule o valor das expressoes: %.2f, %.2f, %.2f, %.2f", g, calculoexpressao, calculoexpressao2, calculoexpressao3, calculoexpressao4);
+
+    return 0;
+}
