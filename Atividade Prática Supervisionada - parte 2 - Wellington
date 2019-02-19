@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //do = faça (traduzido).
+    //Com o do, o mesmo executará o código entre chaves necessariamente pelo menos 01 vez.
+    int i, iniciar;
+    do
+    {
+        printf("Insira '1' para iniciar o jogo:\n");
+        scanf("%d", &iniciar);
+    }
+    //Com a condição nota>10 do while, caso o usuário insira -1 ou qualquer outro número menor que 10, o valor será interpretado como verdadeiro.
+    //Para corrigir o erro das notas negativas da condição while, é recomendade utilizar o operador || (OR - OU).
+    while(iniciar<1 || iniciar>1);
+    {
+        //Para inserir a nota de números decimais deve-se utilizar o '.' ao invés da vírgula para separar as casas decimais.
+        //printf("Nota inserida:\n%.1f", nota);
+        iniciar++;
+    }
+      srand(time(NULL));
+      for (i = 0; i < 2; i++)
+      {
+        printf("%d ", rand('1') % 6);
+      }
+      
+      getch();
+      return 0;
+    }
