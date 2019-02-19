@@ -1,0 +1,267 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* pendentes
+Verificação das 3 casas da armadilha.
+verificacao quando passa da ultima casa.
+*/
+
+int main()
+
+{
+
+char trilha[20];
+int casasJogadorA = 0, casasJogadorB = 0, casasJogadorC = 0,armadilha1, armadilha2, armadilha3, contador = 0, zeraTrilha, totalCasaJogadorA = 0, totalCasaJogadorB = 0, totalCasaJogadorC = 0;
+int contadorRodadas = 1,jogarDados,dado1,dado2,somaDadosJogadorA,somaDadosJogadorB,somaDadosJogadorC, caiuArmadilhaA = 0, caiuArmadilhaB = 0, caiuArmadilhaC = 0;
+srand(time(NULL));
+
+
+//zerando a trilha
+for(zeraTrilha = 0; zeraTrilha <=20; zeraTrilha++)
+
+{
+    trilha[zeraTrilha] = 'X';
+}
+
+
+
+    armadilha1 = rand()% 20 +1;
+    armadilha2 = rand()% 20 +1;
+    armadilha3 = rand()% 20 +1;
+    trilha[armadilha1] = 'W';
+    trilha[armadilha2] = 'W';
+    trilha[armadilha3] = 'W';
+
+
+
+
+
+do{
+printf("================================== \n");
+printf("========= Inicio de jogo ========= \n");
+printf("================================== \n\n");
+printf(" -- > Por favor, aperte 2 para iniciar o jogo e sortear as armadilhas da trilha. \n");
+scanf("%i", &jogarDados);
+}while(jogarDados < 2 || jogarDados > 2);
+
+
+
+printf("\nATENCAO - As armadilhas foram colocadas nas trilhas %i, %i e %i \n\n", armadilha1, armadilha2, armadilha3);
+
+
+
+
+
+do{
+
+        printf("############## %io Turno ############## \n\n", contadorRodadas);
+
+        //jogador A ******************************************************
+
+
+    if(caiuArmadilhaA == 1){
+
+        printf("Jogador A, voce esta na armadilha, Passou a vez !!!! \n\n");
+        caiuArmadilhaA = 0;
+
+    }else
+    {
+
+
+
+
+        do {
+        printf("==== jogador A, Aperte 1 para jogar os dados ==== \n");
+        scanf("%i", &jogarDados);
+            }while(jogarDados < 1 || jogarDados > 1);
+
+
+            if(jogarDados == 1)
+
+            {
+
+                printf("\n===============================\n");
+                printf("Jogador A Jogando os dados.... \n");
+                printf("===============================\n");
+
+                dado1 = rand()% 6 +1;
+                dado2 = rand()% 6 +1;
+                somaDadosJogadorA = dado1 + dado2;
+
+                casasJogadorA = casasJogadorA + somaDadosJogadorA;
+
+                printf("\nVoce tirou %i no primeiro e %i no segundo dado. Avance %i casa \n\n", dado1, dado2,somaDadosJogadorA );
+
+
+                //verificacao se caiu na armadilha *************
+
+
+                        if(trilha[casasJogadorA] == 'W')
+                        {
+                            printf("Voce caiu na armadilha !!! \n\n");
+                            caiuArmadilhaA = 1;
+                        }
+
+                trilha[casasJogadorA] = 'A';
+
+                        //verificacao de vitoria
+
+                        if(trilha[20] == 'A' || casasJogadorA >= 20)
+                        {
+                            printf("O jogador A chegou ao final !!!, o jogador A venceu !!!! \n");
+                            break;
+                        }
+
+
+            }
+
+    }
+
+
+            // jogador B ******************************************************
+
+
+                if(caiuArmadilhaB == 1){
+
+                printf("Jogador B, voce esta na armadilha, Passou a vez !!!! \n\n");
+                caiuArmadilhaB = 0;
+
+                }else{
+
+                    do {
+                    printf("==== jogador B, Aperte 1 para jogar os dados ==== \n");
+                    scanf("%i", &jogarDados);
+                        }while(jogarDados < 1 || jogarDados > 1);
+
+
+            if(jogarDados == 1)
+
+            {
+                printf("\n===============================\n");
+                printf("Jogador B Jogando os dados.... \n");
+                printf("===============================\n");
+
+                dado1 = rand()% 6 +1;
+                dado2 = rand()% 6 +1;
+                somaDadosJogadorB = dado1 + dado2;
+
+                casasJogadorB = casasJogadorB + somaDadosJogadorB;
+
+                printf("\nVoce tirou %i no primeiro e %i no segundo dado. Avance %i casas \n\n", dado1, dado2 , somaDadosJogadorB);
+
+
+                // verificao se caiu na armadilha
+
+                if(trilha[casasJogadorB] == 'W')
+
+                {
+                            printf("Voce caiu na armadilha !!! \n\n");
+                            caiuArmadilhaB = 1;
+                }
+
+
+                    trilha[casasJogadorB] = 'B';
+
+                    //verificacao de vitoria
+
+                    if(trilha[20] == 'B' || casasJogadorB >= 20)
+                {
+                    printf("O jogador B chegou ao final !!!, o jogador B venceu !!!! \n");
+                    break;
+                }
+
+
+
+            }
+
+                }
+
+            //jogador C ******************************************************
+
+
+                if(caiuArmadilhaC == 1){
+
+                printf("Jogador C, voce esta na armadilha, Passou a vez !!!! \n\n");
+                caiuArmadilhaB = 0;
+
+                }else{
+
+                    do {
+                    printf("==== jogador C, Aperte 1 para jogar os dados==== \n");
+                    scanf("%i", &jogarDados);
+                        }while(jogarDados < 1 || jogarDados > 1);
+
+
+            if(jogarDados == 1)
+
+            {
+                printf("\n===============================\n");
+                printf("Jogador C Jogando os dados....\n");
+                printf("===============================\n");
+
+                dado1 = rand()% 6 +1;
+                dado2 = rand()% 6 +1;
+
+                somaDadosJogadorC = dado1 + dado2;
+                casasJogadorC = casasJogadorC + somaDadosJogadorC;
+
+                printf("\nVoce tirou %i no primeiro e %i no segundo dado.Avance %i casas \n\n", dado1, dado2, somaDadosJogadorC);
+
+
+                // verificao se caiu na armadilha
+
+                if(trilha[casasJogadorC] == 'W' || casasJogadorC >= 20)
+
+                {
+                        printf("Voce caiu na armadilha !!! \n\n");
+                        caiuArmadilhaC = 1;
+                }
+
+
+                trilha[casasJogadorC] = 'C';
+
+                //verificacao de vitoria
+
+                    if(trilha[20] == 'C')
+
+                {
+                    printf("O jogador C chegou ao final !!!, o jogador C venceu !!!! \n");
+                    break;
+                }
+
+            }
+        }
+
+
+//status da jogada
+
+
+totalCasaJogadorA = casasJogadorA + somaDadosJogadorA;
+totalCasaJogadorB = casasJogadorB + somaDadosJogadorB;
+totalCasaJogadorC = casasJogadorC + somaDadosJogadorC;
+
+
+printf("==================================\n");
+printf("======= Status do %i Turno =======\n");
+printf("==================================\n");
+printf("==Jogador A = Esta na casa %i ==\n", casasJogadorA);
+printf("==Jogador B = Esta na casa %i ==\n", casasJogadorB);
+printf("==Jogador C = Esta na casa %i ==\n\n\n\n\n", casasJogadorC);
+
+//Limpa tela
+
+system("pause");
+system("cls");
+
+
+//contador de rodadas
+
+contadorRodadas++;
+
+
+
+}while(trilha[20] != 'A' && trilha[20] != 'B' && trilha[20] != 'C');
+
+
+return 0;
+
+}
