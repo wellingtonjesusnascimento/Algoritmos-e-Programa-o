@@ -1,0 +1,132 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    //do = faça (traduzido).
+    //Com o do, o mesmo executará o código entre chaves necessariamente pelo menos 01 vez.
+    iniciar, a, b, dado1, dado2, iniciar02, c, d, dado01, dado02, iniciar03, e, f, dado001, dado002;
+	do
+    {
+        printf("Jogador 01 - Insira '1' para iniciar o jogo:\n");
+        scanf("%d", &iniciar);
+    }
+    //Com a condição nota>10 do while, caso o usuário insira -1 ou qualquer outro número menor que 10, o valor será interpretado como verdadeiro.
+    //Para corrigir o erro das notas negativas da condição while, é recomendade utilizar o operador || (OR - OU).
+        while(iniciar<1 || iniciar>1);
+		printf("\nYour lucky numbers are:\n\n");
+		
+		srand(time(NULL));
+		for (a = 0; a < 1; a++);
+        /* gerando valores aleatórios entre 1 e 6 */
+        printf("Dado 1: %d\n\n", 1 + (rand() % 6));
+        
+        srand(time(NULL));
+        for (b = 0; b < 1; b++)
+        /* gerando valores aleatórios entre 1 e 6 */
+        printf("Dado 2: %d\n\n", 1 + (rand() % 6));
+        
+        //Cálculo dos números aleatórios gerados.
+        printf("Insira o algarismo do primeiro dado:\n");
+        scanf("%d", &dado1);
+        
+        printf("\nInsira o algarismo do segundo dado:\n");
+        scanf("%d", &dado2);
+        
+        printf("\n\nThe sum of your lucky numbers are:\n");
+        
+        int resultado = dado1+dado2;
+        
+        printf("%d\n\n", resultado);
+        
+        printf("You walked %d houses.\n\n", resultado);
+        
+        //Acima foi a jogada do jogador 01
+        //
+        //
+        //
+        
+         do
+    {
+        printf("Jogador 02 - Insira '2' para iniciar o jogo:\n");
+        scanf("%d", &iniciar02);
+    }
+    //Com a condição nota>10 do while, caso o usuário insira -1 ou qualquer outro número menor que 10, o valor será interpretado como verdadeiro.
+    //Para corrigir o erro das notas negativas da condição while, é recomendade utilizar o operador || (OR - OU).
+        while(iniciar02<2 || iniciar02>2);
+		printf("\nYour lucky numbers are:\n\n");
+		
+		srand(time(NULL));
+		for (c = 0; c < 1; c++);
+        /* gerando valores aleatórios entre 1 e 6 */
+        printf("Dado 1: %d\n\n", 1 + (rand() % 6));
+        
+        srand(time(NULL));
+        for (d = 0; d < 1; d++)
+        /* gerando valores aleatórios entre 1 e 6 */
+        printf("Dado 2: %d\n\n", 1 + (rand() % 6));
+        
+        //Cálculo dos números aleatórios gerados.
+        printf("Insira o algarismo do primeiro dado:\n");
+        scanf("%d", &dado01);
+        
+        printf("\nInsira o algarismo do segundo dado:\n");
+        scanf("%d", &dado02);
+        
+        printf("\n\nThe sum of your lucky numbers are:\n");
+        
+        int resultado02 = dado01+dado02;
+        
+        printf("%d\n\n", resultado02);
+        
+        printf("You walked %d houses.\n\n", resultado02);
+        
+        
+        //Acima foi a jogada do jogador 01
+        //
+        //
+        //
+        
+         do
+    {
+        printf("Jogador 03 - Insira '3' para iniciar o jogo:\n");
+        scanf("%d", &iniciar03);
+    }
+    //Com a condição nota>10 do while, caso o usuário insira -1 ou qualquer outro número menor que 10, o valor será interpretado como verdadeiro.
+    //Para corrigir o erro das notas negativas da condição while, é recomendade utilizar o operador || (OR - OU).
+        while(iniciar03<3 || iniciar03>3);
+		printf("\nYour lucky numbers are:\n\n");
+		
+		srand(time(NULL));
+		for (e = 0; e < 1; e++);
+        /* gerando valores aleatórios entre 1 e 6 */
+        printf("Dado 1: %d\n\n", 1 + (rand() % 6));
+        
+        srand(time(NULL));
+        for (f = 0; f < 1; f++)
+        /* gerando valores aleatórios entre 1 e 6 */
+        printf("Dado 2: %d\n\n", 1 + (rand() % 6));
+        
+        //Cálculo dos números aleatórios gerados.
+        printf("Insira o algarismo do primeiro dado:\n");
+        scanf("%d", &dado001);
+        
+        printf("\nInsira o algarismo do segundo dado:\n");
+        scanf("%d", &dado002);
+        
+        printf("\n\nThe sum of your lucky numbers are:\n");
+        
+        int resultado03 = dado001+dado002;
+        
+        printf("%d\n\n", resultado03);
+        
+        printf("You walked %d houses.\n\n", resultado03);
+        
+        //Acima foi a jogada do jogador 01
+        //
+        //
+        //
+        
+      return 0;
+    }
