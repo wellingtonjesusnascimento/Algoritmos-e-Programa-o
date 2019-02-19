@@ -1,0 +1,39 @@
+int main() {
+    int idade, pessoas = 0, contSup50 = 0, contAzul = 0, contAlt = 0;
+    float peso, alt, perc = 0;
+    char cor;
+
+    for(pessoas = 0; pessoas < 20; pessoas++) {
+        printf("Digite a idade, o peso e a altura:\n");
+        scanf("%i", &idade);
+        scanf("%f", &peso);
+        scanf("%f", &alt);
+        do {
+            printf("Digite a cor dos olhos (A-azul, P-petro, V-verde e C-castanho):\n");
+            scanf(" %c", &cor);
+            cor = toupper(cor);//converte para maiusculo
+            if(!(cor == 'A' || cor == 'P' || cor == 'V' || cor == 'C')) {
+                printf("==>Cor de olho invalida!\n");
+            }
+            //enquanto a cor não for uma dessas, repete
+        }while(!(cor == 'A' || cor == 'P' || cor == 'V' || cor == 'C'));
+
+        if(idade > 50 && peso < 60) {
+            contSup50++;
+        }
+
+        if(cor == 'A') {
+            contAzul++;
+        }
+
+        if(alt > 1.68 && cor != 'V') {
+            contAlt++;
+        }
+    }//fim do for
+
+    perc = (contAlt*100 )/pessoas;
+    printf("Total de pessoas com idade > 50 e peso < 60: %i\n", contSup50);
+    printf("% de pessoas com olhos azuis: %.1f %%\n", perc);
+    printf("Total de pessoas com alt > 1,68 e sem olho verde: %i\n", contAlt);
+    return 0;
+}
